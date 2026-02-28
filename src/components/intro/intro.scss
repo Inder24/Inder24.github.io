@@ -1,0 +1,317 @@
+@import "src/scss/globals";
+  .intro {
+    padding: 120px 100px 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    @include weird-medium {
+      padding: 120px 70px 60px;
+      min-height: auto;
+    }
+    @include phablet {
+      padding: 100px 50px 50px;
+      min-height: auto;
+    }
+    @include mobile {
+      padding: 70px 50px 40px;
+      min-height: auto;
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      width: 100%;
+      @include tablet {
+        gap: 40px;
+        align-items: flex-start;
+      }
+      @include weird-medium {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+      }
+      @include phablet {
+        flex-direction: column;
+        gap: 35px;
+        align-items: center;
+      }
+      @include mobile {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+      }
+    }
+
+    &__text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-height: 400px;
+      width: 100%;
+      @include tablet {
+        min-height: 350px;
+      }
+      @include weird-medium {
+        min-height: auto;
+        gap: 30px;
+        max-width: 100%;
+        text-align: left;
+      }
+      @include phablet {
+        min-height: auto;
+        gap: 25px;
+        max-width: 100%;
+        text-align: left;
+      }
+      @include mobile {
+        min-height: auto;
+        gap: 20px;
+        max-width: 100%;
+        text-align: left;
+      }
+    }
+
+    &__image {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include weird-medium {
+        order: -1;
+        margin-bottom: 20px;
+      }
+      @include phablet {
+        order: -1;
+        margin-bottom: 15px;
+      }
+      @include mobile {
+        order: -1;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__profile-pic {
+      // 1.5x bigger than original sizes
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $blue;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      // Center alt text when image fails to load
+      font-size: 1rem;
+      color: $blue;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 420px; // Match the height for vertical centering
+      
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
+      }
+
+      @include desktop {
+        width: 375px;
+        height: 375px;
+        line-height: 375px;
+      }
+      @include tablet {
+        width: 330px;
+        height: 330px;
+        line-height: 330px;
+      }
+      @include weird-medium {
+        width: 240px;
+        height: 240px;
+        border: 2px solid $blue;
+        line-height: 240px;
+        font-size: 0.9rem;
+      }
+      @include phablet {
+        width: 200px;
+        height: 200px;
+        border: 2px solid $blue;
+        line-height: 200px;
+        font-size: 0.8rem;
+      }
+      @include mobile {
+        width: 180px;
+        height: 180px;
+        border: 2px solid $blue;
+        line-height: 180px;
+        font-size: 0.75rem;
+      }
+      @include small-mobile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid $blue;
+        line-height: 160px;
+        font-size: 0.7rem;
+      }
+      @include tiny-mobile {
+        width: 140px;
+        height: 140px;
+        border: 1px solid $blue;
+        line-height: 140px;
+        font-size: 0.65rem;
+      }
+    }
+
+    &__hello, &__tagline {
+      font-size: 2.5rem;
+      @include desktop {
+        font-size: 2.25rem;
+      }
+      @include tablet {
+        font-size: 2rem;
+      }
+      @include phablet {
+        font-size: 1.75rem;
+      }
+      @include small-mobile {
+        font-size: 1.5rem;
+      }
+      @include tiny-mobile {
+        font-size: 1.4rem;
+      }
+      .emoji {
+        width: 40px;
+        height: 40px;
+        @include desktop {
+          width: 35px;
+          height: 35px;
+        }
+        @include tablet {
+          width: 30px;
+          height: 30px;
+        }
+        @include small-mobile {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+    &__hello {
+      font-weight: 300;
+      .wave-hand {
+        background-image: url('../../img/emojis/wave.png');
+        margin-left: 10px;
+        cursor: pointer;
+
+        &.animated {
+          animation-duration: 1s;
+          animation-fill-mode: both;
+        }
+        &.wave {
+          animation-name: wave;
+        }
+
+        @keyframes wave {
+          from {
+            transform: none;
+          }
+          15% {
+            transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
+          }
+          30% {
+            transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 7deg);
+          }
+          45% {
+            transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -10deg);
+          }
+          60% {
+            transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 5deg);
+          }
+          75% {
+            transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -2deg);
+          }
+          to {
+            transform: none;
+          }
+        }
+      }
+    }
+
+    .greeting-text {
+      display: inline-block;
+      transition: opacity 0.3s ease-in-out;
+      
+      &.fade-in {
+        opacity: 1;
+      }
+      
+      &.fade-out {
+        opacity: 0;
+      }
+    }
+
+    &__tagline {
+      font-weight: 300;
+      max-width: 700px;
+      .name {
+        font-weight: 700;
+      }
+      .technologist {
+        background-image: url('../../img/emojis/technologist.png');
+      }
+    }
+    &__contact {
+      font-size: 1.25rem;
+      font-weight: 400;
+      @include phablet {
+        font-size: 1rem;
+      }
+      .emoji {
+        &.pointer {
+          background-image: url('../../img/emojis/pointright.png');
+          width: 30px;
+          height: 30px;
+          margin: 0 5px;
+          vertical-align: text-bottom;
+          @include phablet {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+      .highlight-link {
+        @include transition;
+        font-weight: 400;
+        text-decoration: none;
+        display: inline-block;
+        padding: 2px 3px;
+        text-decoration: none;
+        box-shadow: inset 0 -3px 0 $blue;
+        &:hover {
+          box-shadow: inset 0 -33px 0 0 $blue;
+          color: $white;
+        }
+      }
+      .email-button {
+        @include transition;
+        font-weight: 400;
+        text-decoration: none;
+        display: inline-block;
+        padding: 2px 3px;
+        text-decoration: none;
+        box-shadow: inset 0 -3px 0 $blue;
+        background: none;
+        border: none;
+        font-size: inherit;
+        font-family: inherit;
+        color: inherit;
+        cursor: pointer;
+        &:hover {
+          box-shadow: inset 0 -33px 0 0 $blue;
+          color: $white;
+        }
+      }
+    }
+  }
