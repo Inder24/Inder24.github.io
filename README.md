@@ -108,4 +108,4 @@ This project is licensed under the BSD Zero Clause License (0BSD) - see the [LIC
 **Inderpreet Singh**
 - Email: [likhariinder@gmail.com]
 - LinkedIn: [https://www.linkedin.com/in/inderpreet-singh24](https://www.linkedin.com/in/inderpreet-singh24)
-- GitHub: [@Inder24](https://github.com/Inder24)
+- GitHub: [@Inder24](https://github.com/Inder24)  :) 
